@@ -136,9 +136,8 @@ public class AreaOfInterestTableDdlBuilder {
             columnDefinitions.add(new DdlColumnDefinition(targetColumnName, ddlType));
         }
         if (!emittedTargetColumns.contains(AreaOfInterestConfig.TERRITORY_LEVEL_3_ID_COLUMN)) {
-            columnDefinitions.add(
-                    quote(AreaOfInterestConfig.TERRITORY_LEVEL_3_ID_COLUMN) + " varchar(64)");
-            emittedTargetColumns.add(AreaOfInterestConfig.TERRITORY_LEVEL_3_ID_COLUMN);
+            columnDefinitions.add(new DdlColumnDefinition(
+                AreaOfInterestConfig.TERRITORY_LEVEL_3_ID_COLUMN, "varchar(64)"));
         }
         if (includeBusinessExtras) {
             if (!emittedTargetColumns.contains(AreaOfInterestConfig.AREA_COLUMN)
